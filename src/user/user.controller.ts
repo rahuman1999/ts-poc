@@ -15,7 +15,7 @@ export class UserController {
 
 
   @Post('register_user')
-  async egisterUser(@Body() userData) {
+  async registerUser(@Body() userData) {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(userData.password, salt);
     const bodyData: any = {
